@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">AudioBB</string>
+    <string-array name="book_titles">
+        <item>Harry Potter</item>
+        <item>The Lord of the Rings</item>
+        <item>The Da Vinci Code</item>
+        <item>Norwegian Wood</item>
+        <item>Journey Under the Midnight Sun</item>>
+        <item>One Piece</item>
+        <item>The Three-Body Problem</item>
+        <item>The Red and the Black</item>
+        <item>2001: A Space Odyssey</item>
+        <item>Dune</item>
+        <item>The Great Gatsby</item>
+        <item>Wuthering Heights</item>
+    </string-array>
+
+    <string-array name="authors">
+        <item>J. K. Rowling</item>
+        <item>John Ronald Reuel Tolkien</item>
+        <item>Dan Brown</item>
+        <item>Haruki Murakami</item>
+        <item>Higashino Keigo</item>>
+        <item>Eiichiro Oda</item>
+        <item>Cixin liu</item>
+        <item>Stendhal</item>
+        <item>Arthur C. Clarke</item>
+        <item>Franklin Patrick Herbert Jr.</item>
+        <item>Francis Scott Key Fitzgerald</item>
+        <item>Emily Brontë</item>
+    </string-array>
+</resources>
