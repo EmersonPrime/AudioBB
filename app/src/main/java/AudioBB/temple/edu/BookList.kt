@@ -1,26 +1,53 @@
 package AudioBB.temple.edu
 
-class BookList() {
-    private val booklist= mutableListOf<Book>()
+import android.util.Log
+import androidx.lifecycle.ViewModel
+import org.json.JSONArray
+import java.io.Serializable
 
-    fun add(b:Book){
-        booklist.add(b)
+class BookList : ViewModel(), Serializable{
+
+    companion object {
+        val BOOKLIST_KEY = "Booklist"
     }
-    fun remove(b:Book){
-        booklist.remove(b)
+
+    private val bookList : ArrayList<Book> by lazy {
+        ArrayList()
     }
-    fun get(i:Int): Book {
-        return  booklist[(i)]
+
+    fun add(book: Book) {
+        bookList.add(book)
     }
-    fun size():Int{
-        return booklist.size
+
+    fun remove(book: Book){
+        bookList.remove(book)
     }
-    override fun toString():String{
-        var output = ""
-        for(i in booklist.indices){
-            output += i.toString()
+
+    fun populateBooks (books: JSONArray) {
+        for (i in 0 until books.length()) {
+            bookList.add(Book(books.getJSONObject(i)))
         }
-        return output
     }
 
+    fun copyBooks (newBooks: BookList) {
+        bookList.clear()
+        bookList.addAll(newBooks.bookList)
+    }
+
+    operator fun get(index: Int) = bookList.get(index)
+
+    fun size() = bookList.size
+
+    fun getBookById(id:Int):Book? {
+        for (i in 0 until bookList.size) {
+            var book = bookList[i]
+            if (book.id == id) {
+                Log.d("bookList search", "we found a match")
+                return book
+
+            }
+
+        }
+        return null
+    }
 }
